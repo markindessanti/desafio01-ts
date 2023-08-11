@@ -1,17 +1,17 @@
 import {DioAccount} from './DioAccount';
 
-export class CompanyAccount extends DioAccount {
+export class LuckyAccount extends DioAccount {
 	constructor(name: string, accountNumber: number) {
 		super(name, accountNumber);
 	}
 
-	getLoan = (loanValue: number): void => {
+	deposit = (depositValue: number): void => {
 		if (this.getStatus()) {
-			this.setBalance(this.getBalance() + loanValue);
+			this.setBalance(this.getBalance() + depositValue + 10);
 
 			console.log(
-				'Empréstimo de R$',
-				loanValue.toLocaleString('pt-br', {
+				'Depósito de R$',
+				depositValue.toLocaleString('pt-br', {
 					style: 'currency',
 					currency: 'BRL',
 				}),
